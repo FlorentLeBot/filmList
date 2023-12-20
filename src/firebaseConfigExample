@@ -1,0 +1,23 @@
+import { initializeApp } from 'firebase/app';
+import { getAuth } from 'firebase/auth';
+import { getFirestore } from 'firebase/firestore';
+
+// Configuration Firebase (à remplir avec vos données)
+const firebaseConfig = {
+    apiKey: "", // Clé API Firebase
+    authDomain: "", // Domaine d'authentification Firebase
+    projectId: "", // ID du projet Firebase
+    storageBucket: "", // Bucket de stockage Firebase
+};
+
+// Initialisation de l'application Firebase
+const app = initializeApp(firebaseConfig);
+
+// Récupération de l'objet d'authentification Firebase
+const auth = getAuth(app);
+
+// Récupération de l'objet de base de données Firestore
+const db = getFirestore(app);
+
+// Export des objets d'authentification et de base de données
+export { auth, db };
